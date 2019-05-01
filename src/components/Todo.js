@@ -6,14 +6,14 @@ import { List } from "semantic-ui-react";
 class Todo extends Component {
   state = {};
 
-  markComplete = () => {
-    console.log("hello");
-  };
-
   render() {
     return this.props.todos.map(todo => (
       <List.Item as="li" key={todo.id}>
-        <TodoItem key={todo.id} todo={todo} markComplete={this.markComplete} />
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          markComplete={this.props.markComplete}
+        />
       </List.Item>
     ));
   }

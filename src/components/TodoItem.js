@@ -9,11 +9,16 @@ class TodoItem extends Component {
   };
 
   render() {
+    const { title, id } = this.props.todo;
+
     return (
       <Segment stacked>
         <span style={this.getStyle()}>
-          <input type="checkbox" onChange={this.props.markComplete} />
-          {this.props.todo.title}
+          <input
+            type="checkbox"
+            onChange={this.props.markComplete.bind(this, id)}
+          />
+          {title}
         </span>
       </Segment>
     );
