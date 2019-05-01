@@ -8,27 +8,18 @@ import uuid from "uuid";
 //SemanticUI
 import { Container, List } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import Axios from "axios";
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-        title: "Take out the trash",
-        completed: true
-      },
-      {
-        id: uuid.v4(),
-        title: "Mow the lawn",
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: "Learn react",
-        completed: false
-      }
-    ]
+    todos: []
   };
+
+  componentDidMount() {
+    Axios.get("https://jsonplaceholder.typicode.com/todos?_limit=10").then(
+      res => this.setState({ todos: res.data })
+    );
+  }
 
   //Toggle Complete
   markComplete = id => {
