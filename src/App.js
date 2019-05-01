@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import HeaderSection from "./components/layout/HeaderSection";
 import Todo from "./components/Todo";
+import AddTodo from "./components/AddTodo";
 //SemanticUI
 import { Container, List } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
@@ -44,10 +45,16 @@ class App extends Component {
     });
   };
 
+  //Add Todo
+  addTodo = title => {
+    console.log(title);
+  };
+
   render() {
     return (
       <Container>
         <HeaderSection />
+        <AddTodo addTodo={this.addTodo} />
         <List>
           <Todo
             todos={this.state.todos}
