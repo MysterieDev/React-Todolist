@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Segment } from "semantic-ui-react";
+import { Segment, Button } from "semantic-ui-react";
 class TodoItem extends Component {
   getStyle = () => {
     return {
@@ -13,13 +13,16 @@ class TodoItem extends Component {
 
     return (
       <Segment stacked>
-        <span style={this.getStyle()}>
+        <p style={this.getStyle()}>
           <input
             type="checkbox"
             onChange={this.props.markComplete.bind(this, id)}
           />
           {title}
-        </span>
+        </p>
+        <Button basic color="red" onClick={this.props.delTodo.bind(this, id)}>
+          Delete Item
+        </Button>
       </Segment>
     );
   }

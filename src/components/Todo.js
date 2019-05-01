@@ -13,6 +13,7 @@ class Todo extends Component {
           key={todo.id}
           todo={todo}
           markComplete={this.props.markComplete}
+          delTodo={this.props.delTodo}
         />
       </List.Item>
     ));
