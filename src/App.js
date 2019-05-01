@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import HeaderSection from "./components/layout/HeaderSection";
 import Todo from "./components/Todo";
 //SemanticUI
 import { Container, List } from "semantic-ui-react";
@@ -43,9 +43,11 @@ class App extends Component {
       todos: [...this.state.todos.filter(todo => todo.id !== id)]
     });
   };
+
   render() {
     return (
       <Container>
+        <HeaderSection />
         <List>
           <Todo
             todos={this.state.todos}
