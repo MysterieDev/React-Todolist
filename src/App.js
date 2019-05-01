@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import HeaderSection from "./components/layout/HeaderSection";
 import Todo from "./components/Todo";
 import AddTodo from "./components/AddTodo";
+import About from "./components/pages/About";
 import uuid from "uuid";
 //SemanticUI
 import { Container, List } from "semantic-ui-react";
@@ -58,17 +60,29 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
-        <HeaderSection />
-        <AddTodo addTodo={this.addTodo} />
-        <List>
-          <Todo
-            todos={this.state.todos}
-            markComplete={this.markComplete}
-            delTodo={this.delTodo}
+      <Router>
+        <Container>
+          <HeaderSection />
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <React.Fragment>
+                <AddTodo addTodo={this.addTodo} />
+                <List>
+                  <Todo
+                    todos={this.state.todos}
+                    markComplete={this.markComplete}
+                    delTodo={this.delTodo}
+                  />
+                </List>
+              </React.Fragment>
+            )}
           />
-        </List>
-      </Container>
+
+          <Route path="/about" component={About} />
+        </Container>
+      </Router>
     );
   }
 }
