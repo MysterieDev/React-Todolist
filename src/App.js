@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HeaderSection from "./components/layout/HeaderSection";
 import Todo from "./components/Todo";
 import AddTodo from "./components/AddTodo";
+import uuid from "uuid";
 //SemanticUI
 import { Container, List } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
@@ -10,17 +11,17 @@ class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuid.v4(),
         title: "Take out the trash",
         completed: true
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: "Mow the lawn",
         completed: false
       },
       {
-        id: 3,
+        id: uuid.v4(),
         title: "Learn react",
         completed: false
       }
@@ -48,7 +49,7 @@ class App extends Component {
   //Add Todo
   addTodo = title => {
     const newTodo = {
-      id: 4,
+      id: uuid.v4(),
       title,
       completed: false
     };
