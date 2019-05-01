@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Todo from "./components/Todo";
 //SemanticUI
-import { Container } from "semantic-ui-react";
+import { Container, List } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 class App extends Component {
@@ -28,7 +28,9 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Todo todos={this.state.todos} />
+        <List>
+          <Todo todos={this.state.todos} />
+        </List>
       </Container>
     );
   }
