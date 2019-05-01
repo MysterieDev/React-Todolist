@@ -1,10 +1,16 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class TodoItem extends Component {
   state = {};
   render() {
-    return <p> {this.props.todo.title} </p>;
+    return <React.Fragment> {this.props.todo.title} </React.Fragment>;
   }
 }
+
+//PropTypes
+TodoItem.propTypes = {
+  todos: PropTypes.object.isRequired
+};
 
 export default TodoItem;
