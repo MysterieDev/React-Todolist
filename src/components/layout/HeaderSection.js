@@ -16,7 +16,7 @@ function HeaderSection() {
 
       <Header as="h2" icon textAlign="center">
         <Icon name="calendar alternate outline" circular />
-        <Header.Content>To Do Liste</Header.Content>
+        <Header.Content>To Do List</Header.Content>
       </Header>
     </header>
   );

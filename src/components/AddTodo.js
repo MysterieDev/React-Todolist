@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "semantic-ui-react";
+import PropTypes from "prop-types";
 class AddTodo extends Component {
   state = {
     title: ""
@@ -31,5 +32,10 @@ class AddTodo extends Component {
     );
   }
 }
+
+//PropTypes
+AddTodo.propTypes = {
+  AddTodo: PropTypes.func.isRequired
+};
 
 export default AddTodo;
